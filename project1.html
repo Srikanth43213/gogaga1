@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-success">
+        <a class="navbar-brand" href="#">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABcVBMVEX///8Cmp90vkNxwEP///4CmaD//f/9//////z/+/////v//f5xv0V0vkX7//9zv0EAnpq42qEAl6NsvTnm+voAnJ6ay38AmaEAl5jn+t77//eIysn3//8Ak5ij1N1wwUE9qKtrt0Bhur0pNklHUV7R0dG1tbVtbW0Ak5F0tz9faHOUlp22ub/i5OkdJkeFhYVUVFSampra2tqBgYEAAADBwcHw+O296eh8vlPs//8AmY/w8PDW8/JswTYAjZgAmKjH57YmL0U2NjahoaHZ6+zu999orrCJxsuu5OR3wsRNqa+Y2dxmZmZhtrE7qKHO9fWKxG2CvFO84aC406TS88So1Y+HztVmwcBISEiy6ODL6bE2s7UYqppmwLK05emWzHpMmJbT58bi/NjJ4u1usESM2dPA3rqz19V4xtLX7dYAhnywz5DQ7r5Xq6iZyHB7tFaBg5I3Qlo0Qk0gMDtZYG8+RFROUWl0docWH0AbIEQUHjOuRYQZAAAVFElEQVR4nO1bDVvbRraWsKSRNLYkS5YlZCk2NlCZmKYli22w+SoYMCxfYWm27RYuTdrc3IQkJGGzt7/+nhl92CRxStJ28+xz533yxNiWjuadc+ac94xkjmNgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYPjPwNQU/txD+BOB8Z1vvl7/6qvOR5xB8YeOAhGrgiyrqix/sm0yKg3AYUka/virefIy+83sHzDQ3wUJoMDYPpmhpiGZGBGQhoY+vjMfvXa+uqEd4dMu/1tWNd8DcODFT7YB3FQSBBKW5cGnnS/m796dvst9PXVn6r2nvTufcoR3mP72zMMR6P0TJHFI8zuFjW7BRyMPIr790EVkbqHQ3djYKPgaeRv7cQ7ITU/9pfOX+an5957lqTAfcPFCZ0GRPJnYSYGIEYyQ3MQS8gtgfGPB57DnY0VLj5GJAc5v9npND9aYgofXCJlvSfY4/+DnzYrturZd2dlq+YLqSQMuGCOswHuvCVBJJKtcYgSOUjRBk8Brhe3+zooYBLy5U93t+mCZDmLuDrc+PfXFN3+dfi9DTVZRd3dv3zYMe790IPmlra1ShK3S1kZ0CMRFd7e6b7gwQqNSavmSt5COj6z65urJYXssd3SYH1fRan4I5xCbGi7sVlzX4UUeIDpOUNnqcsMxAsHnPb5XPDxqt9tnqz2ulz8emDhGvowFv9U3AtfmRYBtu2G4v70gK8SPnS+46fm56S/m579+X5Ri7qDqhq5IERi726FjBhFce3GbHKJgrtA3wsAhEPnAXdzf9pVkNWFF7R0f1bPZMX2svGTVj/9Wt4ZwzKlyoWQENoyK8uN5+NMOnFu+kA4BZvnps6NsplzOZrNL+uHfTuqZpcTCUrvpy37rIjTo9Qlc3jFNI6wccJh48W6aad4b4ruuCZNrksvyJgkj3uYjGCtBixyhyrtAjI4N/hkG7/Bu5SCJZQmfH+m6nqOAIY619SFM5LG2yy87YNxxiNHYuMi7VT9hKHjek4klfQwADDNlvZ1byuRiC2PldlMqbJowSsMWRepDwtQVTdP9jgZz5+9TEcF3XCghlft2Gc7hk8vyyZ8Rghb2JVW7H0TRRWxHB4iO8Z28IPkckrjv62U6OEAmQjl+O5bLjh1rXCkgkxKdL/KRBZFS9Og68pTmmaVHNgglnbgyk0lsAENBCU0RJscEEw74j9ixyVjdFtYQhjj96/T8nb/Pves/ldsNRJsfwdABhoKs+NXQNpLP7OgQw7HD7xTIQ5J6/tDK5eLRZCmGGGbGVjXlILRNnsQXWcb24FrhLYFmQ0V9kkxRPFHlISOEoSzdN8kcuZAseIgzMlfUiB0sRAlrdnr9Pfw4VT0IyFx8gCGskNKybYoRO5jAaD5sCJqwoEmq1DtcKrfHhhjmsro+zJDD/g6/AmvAMMjAYo7kmsZ+AROK0vcTVnoGRfYthpLcDUmecmD5QbDbYszQsYNvJVkbXWAwt+maKT961WsM3aCF0ANIn6YThebyynJyiCGK+xzy0PFEDlZNNBg9k81kU4fC+5xlrXK+emt5xYUk/0O/3686rmHH1zLDFlEX2HtutVOCE2O5OqE4CATINNjH/wB+QSBW75f6O8sJQxOiwlc1aSRDcCHED72cvRJWuwvfLTqOYVM6hmlsVqsbsl9ZSQg7dssv/Og6yfvlUw81j9K5zlpnj5vnR7mlduIR/ezJyWPQMAXD5PstnyNCBLXoJen4nD4pGfgXPbVhPcz3mvmHWbKa6SfWUb6Ybyo+t2W4ld2uJhCxUOi7ZuqUA4xGEoQ8Ghip8zZ9yEutMM52orHiFqBe41aYMOLDUyyRkEsGKF5w3Hk9yQhlvdiTJW78aCmXROnDHiZSW0V7/QIXiW7ZE3aDdFHv+DKs5UMrzSr1XxBSvHtj5ZhhLncCkQZCBHf/63RBwLIqYFXF/j6fjCp4NEogUVzYbhIyxoEqI1Xbc0VK0bRNt4AgWd4X3diWu+fLnCochMl7MyxweSubrMH6OSbXz1t68tHET5IGbhOwDxrI7z649ejRhiQ9SAza7j6EmOZBqUkoPvckFSu9dsLQWipCrlVlIOVD2i50T7e3Twsa13fFAUNhJEPBr/BBwrCiqYqkKeAyMWLoLBZkD0OQJgMKbqmQWOGT+D14+ZFaXEqW3cRRT1AhdcPwBgwVIlyQqnDd0r4LGiJ0Kz9vpwwDwhD1rFw7ClNdz5PiiOWTOEpzdasIohBUE7jWP90ziA4J3L2Dvpvm5N2RDBFGXShryaLoc7Qh6bgOXWjwhVEASdTlkwP4YEMF2SppfTFKPI7hbnntTC5OKuWiQNYZ9g6XKMNyJjsxrngISxpe2FpMhuS6RsKQNys+CM5flmKHtcsTj8nIZPx0AixGnIvkE8kH2bgZ8GIsvdxKmh+DW9BvjmLIdV0zYRjs0qSLtcpbDN2UoV1QIegw+jaIirbj8lUvnn1gmDmJNLscuzVmCKpZ8fcW7aQQDhUnwpDTuOOYIUzSxDgYAKU+3o4jI2YIYz0NSSmOc6gxqOEfwVD1SdLVdiK3JgxbA4YV3yMCn7sVZwrRdXaa9ZShfg9LNFyK1jWGPl6ouuJKwhAG57zF0EoZQmqiDHvtXFR0UoatwKG1OJmeG/pww3UMJ2WoQdrV0M51H7ZcJ7FZKRCGMncrTNaACQyteCQ560m8IIpRsYgZQhoshaJJiyBvE22ZyhrCEPqffMJwDBhKgozVdxjihRAUA52bKNPzKT7AELBhi6kPv4VUjEDkVRyafNIoTVM7RKkG1wehFyZecHa89lKdDAToWCdxP/Qskqkpw0Kczcj8B2Forgz7EOb1mGi0iOHEuAR5BRjmytHSjBlypeiaDhH+QUCkm30jhgXbTHzI74DERrJSCEyaiAfrcDBdG2QdytyWG4tCV9xUD8u5mGH20MOEofb8OkN5N7TFiGGws33Quh8MM5Q16dyKGIIl/XvInLCaz7OZawz9QIw6E4dfLj14sFsJHOdGDFFlxUgcHnZB43vK9vKKMRylhTSk+OAU0oas+nuiSQsKiLoSV8ykDMceSyTTPK4vXYtSVI0Xjujs+wL0mj8P51JZVsZThrmlZ+BBDclF6zpDiCR6km2Gu0iWhYXruXQkQY67b6bNoLuFPE3190GbDflQ0H4YHNHnJM2XC2E8f6LptrhVfYLIZBDbEKaqCu3+Sb2cGWKItf0kVwUltan5eCMJfFusLEAhV9vZbJlmGkg14woEQq9eHmaIuUeuSMWXDXIfCxijQT10bsmaoKFRyu00cJIj7WBbk/x+cvWYIZK3Ux3KB11odCBIk/di6EvjddovkepcHvve47xfHrZz5SGGmm8k1wi+xT4ShAfp0nZ2fEWRuROrnEq/o3GExovWMEPQMo/caDnZTgCCBvLvZlqmIUWSKjyCobQwyGsrfHi/tB+kMjtm6CmpJjD5/YKmtYL0FKOPFa9oJQz1Jeskf0Z6n2Efatp+OouVgqRyhWo6qXxlu/WdhiGuE2GUyRyd5A/1cmaYIUbAkOp1YLgLPR9k+AHD/z497UqjAlUdyvyQptxgkKIShogbCGXetavV5aGFWYDpe1yPGeo6BKtllWF0w5pGk34wU0r/+Ha7P1gYtg0t1f+AJi9OJD4EeWvpZUpwmGE3iAs3NN793d3NRUiRSSCtLIcX2vDG3TAEwd+BZinePyEbBAbZTSHr0IwzDfSXF9CF0VRPtyDEePp5I7gF/QL2nugZnWxf6NAI6JkMKWSDXCp5vlJyViBPEAsmbwbElG2IZrzd4ix3BWn8+VKOngzrOZctkxnSozY6F+fSEMoomRFoC2BWRFuM+oFIANgXaGSLiOQDN0j2XkjuEAnbAUOOU3yhCw1IECvC5EhQpsv3ofWB1N4rlpfo4GhJg2wB/w0xVKRuQMc2dHKyFAiWu5yKnj60ytlc6rjyoOXXi9Q5WyEdZGRE5Mle28AEdHFoRMHAUN4ObGOwsEzb5aP6AVFK+kPInqrcrbiG8xZDO6wugESQoWPsPRvLxgyhw68nciRhqElbsBScaJvTtkmIGKRDo5t7NmHoKejpUS5lmMlMJLI08SEuGPzwCBaNKBvE+mg0Q0j+klroLycrTXTC7R0jbhxMfoHEh6Rp8kI1iDcqk7kwg5IPPZsEFBWll69D8tMpq9zEarFeHmIIIsWvLpv0dLJHY4L8u3AhLCIQhho0zr1DuoJpXZw4fNrWrzH0lYNFPt4tpQMNqkZE0P6wDwWs+YIkHfTtMIBBLC9WDzhgSEIKsorLRfcuEFB5tB9AbEGwEfnrmMt7B5IqkP1mkKKSpI3nj6Ld2+zZT9xZloqATM5qNxVVg6sslIKVFbqHBImBr3RBKAVuhJWgC12zJiHv6bM22UrWraO812vretTjW/fICkOq160EIr22Y9uBu7UAdQ0GGeECUv77KSI4k7hJ0Q62t0ql3YIG/a0hxgwvCEM6gxg67Fa/shyYZDs8JJv/ipRWIKjzMtfsna8eH5/3PCXWpZBarcMmBDJZzFprb3ERFg9vhG6/oPqlvfvVCPd/LEh0S1iS/Obj1fzx8dNxD6rsmB7n0lUcMfQXbu0vkoSzIgaVUx8X9vb2YhvVLexp7yXIYV/1L1rQtHpUMwvQ5h9AxJJ0x0N7K8QMoXEHPcz5hdbpo0ePWgs+J8MVlWQtH59rgh/fz4N2d/woE4VYRn8iQxahUyQJhUel6t7e1mmBUz1vcP+Q3PAUpN6TJpI8j9yFwVhBXH4sZmjVHwvUFQKWuIXubn/z4sdSV+NAsHODIg9xMoKhIuMHYVjtkoHBepMUpFVgoRCGphEcqDFDCRhJHvEUaFxBJTcAJQnHNnHTsoo9DHMAR4Nqk08yWbo3CMrmKZ0ZGKCmYUGGgEYyNCcY/O9Dq0YBOgrGnl9qr3qEh+qpsqL2nscMc0tHfnR/RCNfSqQ9A10KLRdWIbSlyAYG+T6iWmDV34HiFOy1yJ0kgfNbleW4zKzY+/4N7pRClD+xxqyJs6fkxpokqL0ziwYX2bh+7t3sVq/aPCqXrXa+R27tQUSttiNNk8sulY/ld8b+MfePycYT9AmuGwY7/VKpvx/GDSbp5LZvcq8WWrkjYKNbE/Wzk3z+5PB5tHzIdre1esNhoLwO2juT04+K+Xz+yWFdJ/WV7C3r7d5IQXYjyNom2c62TZPeU3BJPo4ZujtI/W3bgszdIz7L1cnGH0mm5Xj7G0b37IYuxM06NE4ZqC4Zmo+Ba5sU2Gw293BV+H0MhVZg0ntBkIXtqLxA60RuhIluAaPRm+UDC80jCySMHg2I1Pp6TDCbG8fezYZxbGVz5GaANRbdsQDtRsI0W86dgd4YkUNuBrm7kzTPKQhhx3W7N7TQg05ncKciWj7wvmzlzmXphoM7P1rKtSNdmonFEdhoZ6xi8/c+8YIVv79sXiNIFLi5fHFwA/8RIK632rYyuSGG4FHoo579pCr4hgEm9YrQT+i5awzLVj0/qo7fHJqsaq2L0L1G0QiNXemDOwNDQFDZxk/qlj5gCMJ7op1vShiP3m2/DvIYwOHYUnmIYdkC6aaOqgE3B6g2TQa1wgfxfXweFMvFrQItqDcDQqCIHuePJnR6yx2yzUT77F5PkjxNFm5oxFclzntafD5RhvNJvtInDp+cq5AHfleWSYfIEbFS2vxhf/+Hi35pu+t/tF0g0vzp+5Pi4eFh8SRPldtHA6ve+NN88ezw8Kx4svpTc/C0ye8H6CEFC6oCQNGTYx+6HzcCCugL0F8qUX/SR9XkwSggJkHTeKTs078/3sj7gRFEJAyOqC6ya+H7nzB7SAbtCsKMyDDf/7THujAX75ghIvKkmy7iGxhGGiLcyN8C6YWuPxR3QyMSJrMj0ycarz83mDw8hoTosQSO6HlNS54qQ0Kc1ODsSGPDyhZoLCSjik+KzAhkjKBE6VtQwwSf+cFSQY6UJBra05QUWKmyGjEaFE2Zo3ODoDETridzODViiAV6c4T8i3iBvz9hUf2hEPDdGfrI0t2ZafKCuU5j5urqTSMe2J2Z9eTQ5MjZmZk3b968WB88EAufzCfG4HABTc180SGmbk9eTqamPhekyTVKbbJGX7jZydqrly/X1t5E5XymdnvoyAY9Yu3yslZbq9UayTd3apeThIbMNV69muVk7zW12blau5q8ql3d/NngPwMyItQgVmOGnde1yfnZ2fXL2h36/TWGwAnW62ytNjU3NzVTW5snb7HQeXn1z9o8eBBW5syrGU5t1GaIIr9dm5ztdObXR1z63wRZm4x88Tp6aaxd0meVG7UafR0wFCKGiJutrRGvoNe1GaQJkEjWa2+AE8nWHAL6jc5lbYrkmhe116T0fuhZjH8DgOHV67uAq8iHd2pvaLxpL6OQfJehEDHE3HztahY6e7Dwakqq1eZIxtKI416s3eZIbze/Vvvni8bsZ841ML7L2traq1eXEcMXtRc0F2pf1Wh0fYDh1KurOSR4QqM2CRG59oIc43na1cuXkx2yISJx06/X1tauXnzeciFAlN6eAsTBers2g6F84g5ZZVzEEKoofXo7OkSYXavR3NGgOURGM5dvGuu3ay9nOVor5kkKkummFdeZa7y5XFvn1M8ZqG+tw6k4Rb6IU2DiQ/kdhp2r2pvojKu1L7+E1HqbKjl59tXlHKJlvkOfUH1Tu/tZGRIfTkN5TxiiN7WXd+YbMy9fRSmQOAgwDxTRgOF6o3EbonE2YvCCxMB6bbJDVzAUkznqQ2765frUXIOc9XkZXkHtAqkaFzusvFijWI96mNdfgoO+/Ndr8iT01a8Rw19rxGlrk7PkiLm1XylR7fJ/qQF59te1qYjhi38RQ1/O+OizRimenibPtqLGdPKM8lxjeno6qdKNafJuGtYk8hv0SNwhTp1uxE/ETk03JNLkofnpeeJDrzM4ebYRnfpZIcQCU+Le27Okc4+JcqV5H1/zB440+EDYvrsF+If0yZ8O+d0AEoZ+rRL/eEV+6+uhj+ivZIa/futI+PozV/x4eEM/FaNb8fHfpPF9+1dkb/2wTHi7VUzCIjr5zxg0AwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA8P/U/wf5xSWlqH3QjwAAAAASUVORK5CYII=" class="image" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav navbar ml-auto ">
+                <a class="nav-link active" href="#">Holiday Packages <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">Flight Booking</a>
+                <a class="nav-link" href="#">Hotel Booking</a>
+                <a class="nav-link" href="#">Package Collections</a>
+            </div>
+        </div>
+    </nav>
+    <div>
+        <div class="container1">
+            <h1 class="heading">A Promise of memorable travel experience</h1>
+            <p1 class="paragraph1">Does your Holiday<br> need to be <br>customized?</p1><br>
+            <p2 class="paragraph2">Yes! We believe that every holiday needs to be <br> customized as they are unique. Explore our <br>customized holidays for a memorable <br> experience.</p2><br>
+            <button class="button">Customize My Holiday <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+                </svg></button>
+        </div>
+        <div class="container2">
+            <h1 class="heading1">Trending Indian Destinations</h1>
+            <p class="paragraph">India is a country with diversified travel destinations. We have mastered <br>various holiday options to make our customer experiences more memorable.</p>
+            <div class="container4">
+                <div class="row">
+                    <div class="card-container col-12 col-md-4 col-lg-4 col-xl-2 order-1 order-md-1">
+                        <img src="https://media.istockphoto.com/id/535168027/photo/india-goa-palolem-beach.jpg?s=612x612&w=0&k=20&c=iGV1Ue0Efj87dQirWnUpZVG1dNobUjfVvMGdKHTJ7Qg=" class="card1" />
+                        <div>
+                            <h1 class="card-heading">Goa</h1>
+                            <p class="card-paragraph">The magical land of Goa is a land of celebrations and festivities. Snuggled in the Konkan Coast Belt, It has a long coastline of approx 100 kilometers.</p>
+                        </div>
+                    </div>
+                    <div class="card-container col-12 col-md-4 col-lg-4 col-xl-2 order-2 order-md-4">
+                        <img src="https://5.imimg.com/data5/FI/BM/QV/SELLER-24446426/andaman-tour-package-500x500.jpg" class="card1" />
+                        <div>
+                            <h1 class="card-heading">Andaman</h1>
+                            <p class="card-paragraph">Andaman Islands, island group, Andaman and Nicobar Islands union territory, India, lying in the Indian Ocean about 850 miles (1,370 km) east of the Indian subcontinent. The Andamans have an area of 2,474 square miles (6,408 square km)</p>
+                        </div>
+                    </div>
+                    <div class="card-container col-12 col-md-4 col-lg-4 col-xl-2 order-3 order-md-2">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLJOc7ofZLwbUtmqP1YjBzJEyK0VrDM5mIGw&usqp=CAU" class="card1" />
+                        <div>
+                            <h1 class="card-heading">Himachal</h1>
+                            <p class="card-paragraph">Himachal Pradesh is a paradise for adventure enthusiasts. Visitors can indulge in a variety of adventure activities such as trekking, paragliding, river rafting, skiing, mountain biking, camping, rock climbing, and jeep safaris.</p>
+                        </div>
+                    </div>
+                    <div class="card-container col-12 col-md-4 col-lg-4 col-xl-2 order-4 order-md-3">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYZ625bnTtU3I65P3LWltUogIZXgMaWsIR1g&usqp=CAU" class="card1" />
+                        <div>
+                            <h1 class="card-heading">Rajasthan</h1>
+                            <p class="card-paragraph">Rajasthan attracts tourists for its historical forts, palaces, art and culture with its slogan "Padharo Mhare Desh (Welcome to my land.)" The capital city, Jaipur, also known as Pink City, is a very popular tourist destination and is a part of the Golden Triangle.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1 class="heading1">Flight Booking</h1>
+    <div class="container5">
+        <h1 class="heading4">Your Experience Starts Here</h1>
+        <div class="flight-container">
+            <div class="container6">
+                <div class="flight1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-airplane-fill icons1" viewBox="0 0 16 16">
+                        <path d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849" />
+                    </svg>
+                    <p class="icons1">Flight</p>
+                </div>
+                <div class="flight">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-square icons" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" />
+                    </svg>
+                    <p class="icons">My Bookings</p>
+                </div>
+                <div class="flight">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock icons" viewBox="0 0 16 16">
+                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
+                    </svg>
+                    <p class="icons">Flight Status</p>
+                </div>
+            </div>
+            <hr>
+            <p class="flight-paragraph">Flights</p>
+            <div>
+                <input placeholder="From" class="inputtext">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-right icons" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5m14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5" />
+                </svg>
+                <input placeholder="To" class="inputtext">
+                <input placeholder="Number Of Passengers" class="inputtext">
+            </div>
+            <div class="container7">
+                <form action="/action_page.php">
+                    <label for="departure" class="flight-paragraph">Departure:</label>
+                    <input type="date" id="departure" name="departure">
+                </form>
+                <form action="/action_page.php">
+                    <label for="return" class="flight-paragraph">Return:</label>
+                    <input type="date" id="return" name="return">
+                </form>
+                <input type="submit" class="button1">
+            </div>
+        </div>
+    </div>
+    <div>
+        <h1 class="flight-heading">Features of our flight Resevation System</h1>
+        <div class="flight-feature">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill icon2" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+            </svg>
+            <p class="paragraph">Option to book multi-stop-over/multi-city flights with a detailed fare summary.</p>
+        </div>
+        <div class="flight-feature">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill icon2" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+            </svg>
+            <p class="paragraph">Supports frequent flyers programs.</p>
+        </div>
+        <div class="flight-feature">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill icon2" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+            </svg>
+            <p class="paragraph">Display flight+hotel option and flight deals.</p>
+        </div>
+        <div class="flight-feature">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill icon2" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+            </svg>
+            <p class="paragraph">Display fare rules and baggage information.</p>
+        </div>
+        <div class="flight-feature">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill icon2" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+            </svg>
+            <p class="paragraph">Generate financial reports and reservation reports.</p>
+        </div>
+    </div>
+    <h1 class="heading1">Hotel Booking</h1>
+    <div class="hotel-container">
+        <div class="hotel-subcont">
+            <p class="paragraph3">Destination, Property name or Address:</p>
+            <input placeholder="More Places then you could ever go" class="inputtext2">
+        </div>
+        <div class="hotel-subcont">
+            <form action="/action_page.php">
+                <label for="check" class="paragraph3">Check-in:</label><br>
+                <input type="date" id="check" placeholder="Check-in-date" class="inputtext2">
+
+            </form>
+        </div>
+        <div class="hotel-subcont">
+            <form action="/action_page.php">
+                <label for="check" class="paragraph3">Check-out</label><br>
+                <input type="date" id="check" placeholder="Check-in-date" class="inputtext2">
+            </form>
+        </div>
+        <input type="submit" class="button3">
+    </div>
+    <h1 class="heading1">Our hotel has such deals</h1>
+    <div class="row">
+        <div class="hotel-card col-12 col-md-4 col-xl-1 order-1 order-md-1">
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxOl6h_E0ZSi1POCz5S_vZITo75TdX62TecA&usqp=CAU" class="hotel-card-img" />
+                <div>
+                    <button class="hotel-card-btn">Persons 2, Nights 3</button>
+                    <button class="btn btn-danger">-25%</button>
+                    <p class="hotel-card-para">Valentine's day holiday for two:2 nights+Dinner+SPA</p>
+                    <p1 class="hotel-card-para1">7 services incl.<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                        </svg></p1><br>
+                    <p2 class="hotel-card-para">West Sands</p2><br>
+                    <p3 class="hotel-card-para1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                        </svg>Kinara Vashaamagu Ukulhas</p3>
+                    <hr>
+                    <div class="hotel-sub-cont">
+                        <button class="btn btn-primary hotel-card-btn3">Book</button>
+                        <div>
+                            <p class="hotel-card-para2">€ 1000,00 <br> </p>
+                            <p1 class="hotel-card-para3">€ 500,00</p1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hotel-card col-12 col-md-4 col-xl-1 order-2 order-md-3">
+            <div>
+                <img src="https://content3.jdmagicbox.com/comp/chennai/m5/044pxx44.xx44.180630203748.k9m5/catalogue/coconuttree-farm-house-thalambur-chennai-resorts-q5xd8qipna.jpg" class="hotel-card-img" />
+                <div>
+                    <button class="hotel-card-btn">Persons 2, Nights 3</button>
+                    <p class="hotel-card-para">City break deal for 2-Wine tasting and Opera</p>
+                    <p1 class="hotel-card-para1">3 services incl.<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                        </svg></p1><br>
+                    <p2 class="hotel-card-para">Hotel Argentina</p2><br>
+                    <p3 class="hotel-card-para1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                        </svg>Durovink, Frana Supila 14, 20000,Dubrovnik, Croatila</p3>
+                    <hr>
+                    <div class="hotel-sub-cont">
+                        <button class="btn btn-primary hotel-card-btn3">Book</button>
+                        <div>
+                            <p1 class="hotel-card-para4">€ 250,00</p1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hotel-card col-12 col-md-4 col-xl-1 order-3 order-md-2">
+            <div>
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/21/af/e8/hotel-el-ganzo.jpg?w=700&h=-1&s=1" class="hotel-card-img" />
+                <div>
+                    <button class="hotel-card-btn">Persons 2, Nights 3</button>
+                    <p class="hotel-card-para">Motorboat-Special - 2 nights in Berlin + motorboat trip</p>
+                    <p1 class="hotel-card-para1">7 services incl.<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                        </svg></p1><br>
+                    <p2 class="hotel-card-para">El Ganzo</p2><br>
+                    <p3 class="hotel-card-para1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                        </svg>Tiburon,Sin, La Playita, Los Caos, 23403 San Jose Del Cabo, Baja California Sur, Mexico</p3>
+                    <hr>
+                    <div class="hotel-sub-cont">
+                        <button class="btn btn-primary hotel-card-btn3">Book</button>
+                        <div>
+                            <p1 class="hotel-card-para4">€ 200,00</p1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hotel-card col-12 col-md-4 col-xl-1 order-4 order-md-4">
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3pDVbNCLNIYqe2OpspWLFN_9xernQxSDAtg&usqp=CAU" class="hotel-card-img" />
+                <div>
+                    <button class="hotel-card-btn">Persons 2, Nights 3</button>
+                    <button class="btn btn-danger">-25%</button>
+                    <p class="hotel-card-para">3 days for two in the 3 * Hotel ibis Munchen Messe in the cosmopolitan city</p>
+                    <p1 class="hotel-card-para1">7 services incl.<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                        </svg></p1><br>
+                    <p2 class="hotel-card-para">Hotel ibis Munchen Messe</p2><br>
+                    <p3 class="hotel-card-para1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                        </svg>Otto-Lilienthal-Ring 2, 85622 Feldkirchen, Germany</p3>
+                    <hr>
+                    <div class="hotel-sub-cont">
+                        <button class="btn btn-primary hotel-card-btn3">Book</button>
+                        <div>
+                            <p class="hotel-card-para2">€ 450,00 <br> </p>
+                            <p1 class="hotel-card-para3">€ 300,00</p1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1 class="heading1">Tourism Packages </h1>
+    <div class="tour-package-container">
+        <h1 class="tour-package-heading">Top Rated <br>Tour Packages</h1>
+        <hr class="hr1">
+        <div class="package-container">
+            <div>
+                <img src="https://img.traveltriangle.com/blog/wp-content/uploads/2017/10/Dubai-at-night-cover.jpg" class="package-image" />
+            </div>
+            <div>
+                <img src="https://media.istockphoto.com/id/1363353450/photo/pink-and-purple-lights-shimmering-on-hernando-de-soto-bridge-over-mississippi-river.jpg?s=612x612&w=0&k=20&c=E4_fjFLC8pdg1IYnSIqKhDdTXU4eusBR_ZxJTm_UCHw=" class="package-image" />
+            </div>
+            <div>
+                <img src="https://qph.cf2.quoracdn.net/main-qimg-ebe10e07930e559a0d35d376c798f532-lq" class="package-image" />
+            </div>
+        </div>
+        <div class="package-details-container">
+            <div class="package-cont">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-phone package-details-icon" viewBox="0 0 16 16">
+                    <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+                    <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+                </svg>
+                <h1 class="heading1">9284986645</h1>
+            </div>
+            <div>
+                <div class="package-cont">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-at package-details-icon" viewBox="0 0 16 16">
+                        <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2zm3.708 6.208L1 11.105V5.383zM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2z" />
+                        <path d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648m-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z" />
+                    </svg>
+                    <p class="package-paragraph">Support@yourtrip.com</p>
+                </div>
+                <div class="package-cont">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe package-details-icon" viewBox="0 0 16 16">
+                        <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z" />
+                    </svg>
+                    <p class="package-paragraph">www.lockyourtrip</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.image {
+    height: 40px;
+    width: 40px;
+    padding: 5px;
+}
+
+.navbar {
+    margin-left: auto;
+}
+
+.container1 {
+    background-image: url("https://static.wixstatic.com/media/2d34e5_f31b7f79c757410d8aab04ca606bcbe4~mv2.png/v1/fill/w_1343,h_556,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/2d34e5_f31b7f79c757410d8aab04ca606bcbe4~mv2.png");
+    min-height: 45vh;
+    min-width: 100vw;
+    padding-left: 8%;
+    background-size: cover;
+}
+
+.heading {
+    color: #ffffff;
+    font-family: "Lucida Handwriting";
+    padding-top: 10%;
+    font-size: 12px;
+}
+
+.paragraph1 {
+    color: #ffffff;
+    font-family: "Roboto";
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.paragraph2 {
+    color: #ffffff;
+    font-family: "Roboto";
+    font-size: 15px;
+}
+
+.button {
+    border-radius: 15px;
+    color: #000000;
+    background-color: #ffffff;
+    border-color: transparent;
+    margin-top: 10%;
+    margin-bottom: 3px;
+}
+
+.container2 {
+
+    margin-top: 10%;
+}
+
+.heading1 {
+    font-family: "Serif";
+    font-weight: bold;
+    padding-left: 3%;
+}
+
+.paragraph {
+    font-family: 'Roboto';
+    padding-left: 3%;
+}
+
+.card-container {
+    margin: 30px;
+    background-size: cover;
+    margin-left: 0%;
+    margin-right: 8%;
+}
+
+.card1 {
+    display: block;
+    height: 20vh;
+    min-width: 60%;
+    margin: 5%;
+    border-radius: 15px;
+    margin-right: 10px;
+    margin-right: 3px;
+    margin-left: 8%;
+}
+
+.card-heading {
+    font-family: "Serif";
+    font-weight: bold;
+    padding-top: 5%;
+    padding-left: 10%;
+}
+
+.card-paragraph {
+    font-family: "Times New Roman";
+    padding-left: 10%;
+}
+
+.container3 {
+    display: flex;
+    flex-direction: column;
+}
+
+.container5 {
+    background-image: url("https://i.pinimg.com/736x/ec/05/db/ec05dbb5deb17a06d30ee83f7b98d3f5.jpg");
+    min-height: 100vh;
+    min-width: 120vw;
+    background-size: cover;
+    border-radius: 15px;
+    margin: 3%;
+}
+
+.heading4 {
+    font-family: "Lucida Handwriting";
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 15%;
+}
+
+.flight-container {
+    display: flex;
+    flex-direction: column;
+    border-color: #000000;
+    box-shadow: 5px 10px #888888;
+    border-style: solid;
+    min-height: 20vh;
+    width: 90vw;
+    margin-left: 6%;
+    margin-top: 10%;
+    margin-bottom: 15%;
+}
+
+.container6 {
+    display: flex;
+}
+
+.icons {
+    color: #ffffff;
+    margin: 5px;
+    font-weight: bold;
+}
+
+.icons1 {
+    margin: 5px;
+    font-weight: bold;
+}
+
+.flight {
+    display: flex;
+    margin-right: 5px;
+}
+
+.flight1 {
+    display: flex;
+    margin-right: 5px;
+    background-color: #ffffff;
+}
+
+.flight-paragraph {
+    font-family: "roboto";
+    font-size: 20px;
+    color: #ffffff;
+    margin-left: 10px;
+}
+
+.inputtext {
+    min-width: 200px;
+    margin-left: 7px;
+    margin: 5px;
+}
+
+.inputtext1 {
+    width: 200px;
+    margin-left: 5px;
+    margin: 5px;
+}
+
+.container7 {
+    display: flex;
+    margin-top: 8px;
+}
+
+.button1 {
+
+    min-width: 150px;
+    background-color: #d95b25;
+    font-family: "roboto";
+    color: #ffffff;
+    margin-left: 10px;
+    margin: 10px;
+    border-color: transparent;
+}
+
+.flight-heading {
+    font-family: "Times New Roman";
+    font-size: 30px;
+    font-weight: bold;
+    color: #000000;
+    margin-left: 3%;
+}
+
+.flight-feature {
+    display: flex;
+}
+
+.icon2 {
+    margin: 5px;
+    margin-left: 5%;
+    color: #1672B2;
+}
+
+.hotel-container {
+    display: flex;
+    background-color: #e3a60b;
+    border-color: #000000;
+    min-height: 10vh;
+    border-radius: 10px;
+    min-width: 100vw;
+    margin-left: 3%;
+    margin-bottom: 10px;
+}
+
+.paragraph3 {
+    margin: 5px;
+    padding-top: 15px;
+    padding-left: 15px;
+    font-family: "roboto";
+}
+
+.hotel-subcont {
+    margin: 5px;
+}
+
+.inputtext2 {
+    min-width: 150px;
+    margin-left: 5%;
+}
+
+.button3 {
+    height: 30px;
+    width: 100px;
+    margin: 10px;
+    margin-top: 55px;
+    background-color: #2232e3;
+    color: #ffffff;
+    font-family: "roboto";
+    border-color: transparent;
+}
+
+.hotel-card {
+    min-height: 35px;
+    min-width: 23vw;
+    background-color: skyblue;
+    margin-left: 5%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+}
+
+.hotel-card-img {
+    height: 150px;
+    min-width: 45px;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-left: 2%;
+}
+
+.hotel-card-btn {
+    border-color: #ffffff;
+    border-color: transparent;
+    font-family: "roboto";
+    margin-left: 3%;
+    min-width: 10%;
+    margin-top: 4%;
+    border-radius: 10px;
+    margin-right: 90px;
+    margin: 10px;
+}
+
+.hotel-card-para {
+    font-family: "roboto";
+    padding-left: 3%;
+    font-weight: bold;
+    padding-top: 5%;
+}
+
+.hotel-card-para1 {
+    padding-left: 3%;
+    padding-top: 5%;
+    padding-bottom: 5px;
+}
+
+.hotel-card-btn3 {
+    margin-left: 3%;
+    margin-bottom: 2%;
+    height: 35px;
+    min-width: 70px;
+}
+
+.hotel-sub-cont {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hotel-card-para2 {
+    padding-right: 3%;
+    text-decoration: line-through;
+}
+
+.hotel-card-para3 {
+    font-family: "roboto";
+    font-size: 30px;
+    color: #FF0000;
+    padding: 2px;
+    font-weight: bold;
+}
+
+.hotel-card-para4 {
+    font-family: "roboto";
+    font-size: 30px;
+    color: #00000;
+    padding: 2px;
+    font-weight: bold;
+}
+
+.tour-package-container {
+    background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20231219/pngtree-green-water-and-green-mountains-natural-environment-photo-image_15526887.png");
+    min-height: 70vh;
+    min-width: 100vw;
+    background-size: cover;
+    border-radius: 15px;
+    margin-left: 5%;
+    margin-bottom: 10%;
+    justify-content: center;
+}
+
+.tour-package-heading {
+    font-family: "Times New Roman";
+    text-align: center;
+    color: white;
+    text-shadow: 2px 4px 4px #000000;
+    padding-top: 10%;
+}
+
+hr {
+    border-top: 2px solid white;
+    margin: 10px;
+}
+
+.hr1 {
+    border-top: 5px solid white;
+    margin: 30px;
+}
+
+.package-image {
+    height: 33vh;
+    width: 30vw;
+    margin-left: 5%;
+    margin-right: 10%;
+    border-color: #ffffff;
+    border-style: solid;
+    margin-bottom: 5%;
+    padding: 20px;
+}
+
+.package-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.package-details-container {
+    display: flex;
+    background-color: #ffffff;
+    min-height: 6vh;
+    width: 90vw;
+    margin-left: 2%;
+    margin-bottom: 20%;
+    border-radius: 5px;
+    justify-content: space-between;
+}
+
+.package-details-icon {
+    height: 30px;
+    width: 50px;
+    margin: 5px;
+}
+
+.package-paragraph {
+    font-weight: bold;
+    font-family: "roboto";
+    margin-top: 4%;
+    margin-right: 3%;
+}
+
+.package-cont {
+    display: flex;
+}
